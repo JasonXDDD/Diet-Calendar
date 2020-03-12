@@ -10,6 +10,15 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.initSwiper()
+  }
+
+  initSwiper() {
+    const swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
   }
 
 }
