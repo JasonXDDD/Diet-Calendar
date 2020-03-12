@@ -1,0 +1,86 @@
+
+[hidden]
+  display: none !important
+
+
+$pc-media: 1200px
+$pcs-media: 1199px
+$pad-media: 992px
+$pads-media: 991px
+$phone-media: 768px
+$phones-media: 767px
+
+@mixin pc-width()
+  @media all and (min-width: $pc-media)
+    @content
+
+
+@mixin pad-width()
+  @media all and (min-width:$pad-media) and (max-width: $pcs-media)
+    @content
+
+
+@mixin small-pad-width()
+  @media all and (min-width: $phone-media) and (max-width:$pads-media)
+    @content
+
+
+@mixin phone-width()
+  @media all and (max-width: $phones-media)
+    @content
+
+
+
+@mixin responsive-padding($pc,$pad,$small-pad,$phone)
+  @include pc-width
+    padding: $pc
+
+  @include pad-width
+    padding: $pad
+
+  @include small-pad-width
+    padding: $small-pad
+
+  @include phone-width
+    padding: $phone
+
+
+@mixin responsive-margin($pc,$pad,$small-pad,$phone)
+  @include pc-width
+    margin: $pc
+
+  @include pad-width
+    margin: $pad
+
+  @include small-pad-width
+    margin: $small-pad
+
+  @include phone-width
+    margin: $phone
+
+
+@mixin responsive-height($pc,$pad,$small-pad,$phone)
+  @include pc-width
+    height: $pc
+
+  @include pad-width
+    height: $pad
+
+  @include small-pad-width
+    height: $small-pad
+
+  @include phone-width
+    height: $phone
+
+@mixin responsive-width($pc,$pad,$small-pad,$phone)
+  @include pc-width
+    width: $pc
+
+  @include pad-width
+    width: $pad
+
+  @include small-pad-width
+    width: $small-pad
+
+  @include phone-width
+    width: $phone
