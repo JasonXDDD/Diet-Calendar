@@ -1,0 +1,96 @@
+{
+  "configVersion": 1,
+  "timestamp": 1584011922822,
+  "index": "/Diet-Calendar/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/Diet-Calendar/5-es2015.3aade0aa44e457e2a789.js",
+        "/Diet-Calendar/5-es5.3aade0aa44e457e2a789.js",
+        "/Diet-Calendar/favicon.ico",
+        "/Diet-Calendar/index.html",
+        "/Diet-Calendar/main-es2015.4170e04507492e95a668.js",
+        "/Diet-Calendar/main-es5.4170e04507492e95a668.js",
+        "/Diet-Calendar/manifest.webmanifest",
+        "/Diet-Calendar/polyfills-es2015.442fa3cc45520cc0d518.js",
+        "/Diet-Calendar/polyfills-es5.e94ba732172de6683982.js",
+        "/Diet-Calendar/runtime-es2015.889992286dff5b2fe896.js",
+        "/Diet-Calendar/runtime-es5.889992286dff5b2fe896.js",
+        "/Diet-Calendar/styles.8909c00e29f5908b48d0.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/Diet-Calendar/assets/Calendar-Heatmap-Plugin-jQuery.zip",
+        "/Diet-Calendar/assets/icons/icon-128x128.png",
+        "/Diet-Calendar/assets/icons/icon-144x144.png",
+        "/Diet-Calendar/assets/icons/icon-152x152.png",
+        "/Diet-Calendar/assets/icons/icon-192x192.png",
+        "/Diet-Calendar/assets/icons/icon-384x384.png",
+        "/Diet-Calendar/assets/icons/icon-512x512.png",
+        "/Diet-Calendar/assets/icons/icon-72x72.png",
+        "/Diet-Calendar/assets/icons/icon-96x96.png",
+        "/Diet-Calendar/assets/sass/_fixed.scss",
+        "/Diet-Calendar/assets/sass/_import.sass",
+        "/Diet-Calendar/assets/sass/_rwd.sass",
+        "/Diet-Calendar/assets/script/jquery.CalendarHeatmap.min.js",
+        "/Diet-Calendar/assets/style/jquery.CalendarHeatmap.min.css"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/Diet-Calendar/5-es2015.3aade0aa44e457e2a789.js": "65e3e354e10ecf2eca630a15ea0940de32c00793",
+    "/Diet-Calendar/5-es5.3aade0aa44e457e2a789.js": "a78ad5544d0b948443e3b394a849258f621f26e2",
+    "/Diet-Calendar/assets/Calendar-Heatmap-Plugin-jQuery.zip": "85a73d7a862c86a757bd7cdf7e0abb792d000acf",
+    "/Diet-Calendar/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/Diet-Calendar/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/Diet-Calendar/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/Diet-Calendar/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/Diet-Calendar/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/Diet-Calendar/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/Diet-Calendar/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/Diet-Calendar/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/Diet-Calendar/assets/sass/_fixed.scss": "ac8e38eef5f3969b38bd83911908c563a88a5adb",
+    "/Diet-Calendar/assets/sass/_import.sass": "4365562c13f89d0b3d40a978789a4e63bd4564cd",
+    "/Diet-Calendar/assets/sass/_rwd.sass": "42ed6be3fc5589b4e331649e78704abe4e2071d6",
+    "/Diet-Calendar/assets/script/jquery.CalendarHeatmap.min.js": "322094b97086a5c0e9be4d7fa39ea32c63c5e774",
+    "/Diet-Calendar/assets/style/jquery.CalendarHeatmap.min.css": "264a4fffef3dace449d844fabdab668057939ce3",
+    "/Diet-Calendar/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/Diet-Calendar/index.html": "501c15b721de63b5215193b5894e38017a9d736a",
+    "/Diet-Calendar/main-es2015.4170e04507492e95a668.js": "6fb72c52d92d59cca8dbdbdb656e83d8aa3e5fdc",
+    "/Diet-Calendar/main-es5.4170e04507492e95a668.js": "71caf86251a9074a4728040ccf8aaf645ae8886d",
+    "/Diet-Calendar/manifest.webmanifest": "ac1be9b93e522b8d1c40e9eda084abbddaddc8eb",
+    "/Diet-Calendar/polyfills-es2015.442fa3cc45520cc0d518.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
+    "/Diet-Calendar/polyfills-es5.e94ba732172de6683982.js": "29c3dfd16faa921dd49165f318f9eed12a2f3be7",
+    "/Diet-Calendar/runtime-es2015.889992286dff5b2fe896.js": "61a6b31d43513ad8912d6e4faf56fb556702f8c1",
+    "/Diet-Calendar/runtime-es5.889992286dff5b2fe896.js": "b164c1583ff2c701e7586058d4bef6f29db518ee",
+    "/Diet-Calendar/styles.8909c00e29f5908b48d0.css": "69486f9ecf33d37b80bef973c2b8e237fc602c59"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

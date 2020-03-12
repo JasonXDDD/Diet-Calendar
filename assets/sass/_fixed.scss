@@ -1,0 +1,24 @@
+// fix bootstrap position no setting t,b,l,r
+.t-0 {
+  top: 0 !important;
+}
+
+.b-0 {
+  bottom: 0 !important;
+}
+
+.l-0 {
+  left: 0 !important;
+}
+
+.r-0 {
+  right: 0 !important;
+}
+
+.w-fit {
+  width: fit-content !important;
+}
+
+.w-fill {
+  width: -webkit-fill-available !important;
+}
