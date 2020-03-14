@@ -2,7 +2,7 @@
   <div class="col-4">
     <div class="text-center">
       <!-- <h5 class="text-white m-0">{{ time }}</h5> -->
-      <select class="inverted ui dropdown text-white m-0 input-dark border-0" name="" id="">
+      <select class="inverted ui dropdown text-white m-0 input-dark border-0" [(ngModel)]="selectTime" (change)="selectChange(selectTime)">
         <option *ngFor="let item of timeList" [value]="item">{{ item }}</option>
       </select>
       <!-- <p class="text-white m-0">{{ status }}</p> -->

@@ -1,12 +1,49 @@
-<div class="my-5 mx-auto d-flex flex-column" style="width: 340px; height: 550px;">
-
+<div
+  class="my-5 mx-auto d-flex flex-column"
+  style="width: 340px; height: 550px;"
+>
   <h2 class="text-white pb-5">作息</h2>
 
+  <div class="progress">
+    <div
+      class="progress-bar progress-bar-striped progress-bar-animated"
+      role="progressbar"
+      [ngStyle]="{width: calcTimeToLength('00:00', schedule[0].time)}"
+      aria-valuenow="10"
+      aria-valuemin="0"
+      aria-valuemax="24"
+    ></div>
+
+    <div
+      class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+      role="progressbar"
+      [ngStyle]="{width: calcTimeToLength(schedule[0].time, schedule[1].time)}"
+      aria-valuenow="10"
+      aria-valuemin="0"
+      aria-valuemax="24"
+    ></div>
+
+    <div
+      class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+      role="progressbar"
+      [ngStyle]="{width: calcTimeToLength(schedule[1].time, schedule[2].time)}"
+      aria-valuenow="10"
+      aria-valuemin="0"
+      aria-valuemax="24"
+    ></div>
+  </div>
+
   <div>
-    <app-event-item [status]="'睡覺'" [time]="'10:00'" [title]="'起床'" ></app-event-item>
-    <app-event-item [status]="'睡覺'" [time]="'11:00'" [title]="'睡覺'" ></app-event-item>
+    <app-event-item
+      *ngFor="let item of schedule; let id = index"
+      [status]=""
+      [time]="item.time"
+      [title]="item.title"
+      (timeEvent)="changeTime(id, $event)"
+    ></app-event-item>
+
+
   </div>
 
   <button class="ui inverted teal button mt-auto" type="submit">Submit</button>
-
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-event-item',
@@ -10,6 +10,9 @@ export class EventItemComponent implements OnInit {
   @Input() title: string;
   @Input() time: string;
   @Input() status: string;
+  @Output() timeEvent = new EventEmitter<string>();
+
+  selectTime = '00:00';
 
   timeList = [
     '00:00',
@@ -61,9 +64,15 @@ export class EventItemComponent implements OnInit {
     '23:00',
     '23:30',
   ];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.selectTime = this.time;
+  }
+
+  selectChange(item) {
+    this.timeEvent.emit(item);
   }
 
 }
