@@ -3,14 +3,19 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <app-login-form></app-login-form>
+        <app-login-form (slideNext)="slideNext()"></app-login-form>
       </div>
       <div class="swiper-slide">
-        <app-login-schedule></app-login-schedule>
+        <app-login-schedule (slideNext)="slideNext()"></app-login-schedule>
       </div>
       <div class="swiper-slide">
-        <div class="m-5">
-          Slide 3
+        <div
+          class="my-5 mx-auto d-flex flex-column"
+          style="width: 340px; height: 550px;"
+        >
+          <h3 class="text-white">現在就開始減重計畫吧！</h3>
+          <button class="ui inverted teal button mt-auto">開始吧！</button>
+
         </div>
       </div>
     </div>

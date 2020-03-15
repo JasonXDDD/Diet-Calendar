@@ -7,18 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  mySwiper: any;
   constructor() { }
 
   ngOnInit(): void {
-    this.initSwiper()
+    this.initSwiper();
   }
 
   initSwiper() {
-    const swiper = new Swiper('.swiper-container', {
+    this.mySwiper = new Swiper('.swiper-container', {
       pagination: {
         el: '.swiper-pagination',
       },
     });
+  }
+
+  slideNext() {
+    this.mySwiper.slideNext();
   }
 
 }

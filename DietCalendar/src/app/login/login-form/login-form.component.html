@@ -4,25 +4,34 @@
 
   <form class="ui inverted form">
     <div class="field">
-      <label>First Name</label>
+      <label>使用帳號</label>
       <input
         type="text"
         class="input-dark w-fill"
         name="first-name"
-        placeholder="First Name"
+        placeholder="登入 ID"
       />
     </div>
     <div class="field">
-      <label>Last Name</label>
+      <label>體重</label>
       <input
         type="text"
         class="input-dark w-fill"
         name="last-name"
-        placeholder="Last Name"
+        placeholder="目前體重 kg"
+      />
+    </div>
+    <div class="field">
+      <label>目標</label>
+      <input
+        type="text"
+        class="input-dark w-fill"
+        name="last-name"
+        placeholder="目標體重 kg"
       />
     </div>
   </form>
 
-  <button class="ui inverted teal button mt-auto" type="submit">Submit</button>
+  <button class="ui inverted teal button mt-auto" (click)="doNextPage()">下一步</button>
 
 </div>

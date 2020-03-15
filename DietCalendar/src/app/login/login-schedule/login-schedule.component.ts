@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login-schedule',
@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginScheduleComponent implements OnInit {
 
+  @Output() slideNext = new EventEmitter<any>();
   schedule = [
-    { title: '起床', time: '00:00'},
-    { title: '可吃食物', time: '00:00'},
-    { title: '限制進食', time: '00:00'},
-    { title: '睡覺', time: '00:00'},
+    { title: '起床', time: '00:00', fromStatus: '睡眠'},
+    { title: '可吃食物', time: '00:00', fromStatus: '禁食'},
+    { title: '限制進食', time: '00:00', fromStatus: '吃'},
+    { title: '睡覺', time: '00:00', fromStatus: '禁食'},
   ];
   constructor() { }
 
@@ -24,18 +25,43 @@ export class LoginScheduleComponent implements OnInit {
 
   // progress bar
 
-  // TODO: change it to moment for time duration
-  calcTimeToLength(from, to) {
-    function formatNumber(time) {
-      const tmp = time.split(':');
-      let ans = 0;
-      ans += Number(tmp[0]);
-      if (tmp[1] === '30') { ans += 0.5; }
-      return ans;
-    }
-    const fromNumber = formatNumber(from);
-    const toNumber = formatNumber(to);
+  genProgressBar(list) {
+    const tmp = [];
+    list.forEach(ele => {
+      tmp.push({
+        time: moment.utc(ele.time, 'HH:mm').valueOf(),
+        status: ele.fromStatus,
+        title: ele.title,
+        duration: 0
+      });
+    });
 
-    return ((toNumber - fromNumber) * 100 / 24) + '%';
+    tmp.sort((a, b) => a.time - b.time)
+    .map((ele, id) => {
+      if (id === 0) {
+        ele.duration = moment.utc(ele.time).diff(moment.utc('00:00', 'HH:mm'), 'hours', true);
+      } else {
+        ele.duration = moment.utc(ele.time).diff(moment.utc(tmp[id - 1].time), 'hours', true);
+      }
+    });
+
+    tmp.push({
+      time: 0,
+      status: tmp[0].status,
+      title: tmp[0].title,
+      duration: moment.utc('24:00', 'HH:mm').diff(moment.utc(tmp[tmp.length - 1].time), 'hours', true)
+    });
+
+    return tmp;
+  }
+
+  calcType(list, type) {
+    return list.filter(ele => ele.status === type)
+    .map(ele => ele.duration)
+    .reduce((a, b) => a + b);
+  }
+
+  doNextPage() {
+    this.slideNext.emit();
   }
 }

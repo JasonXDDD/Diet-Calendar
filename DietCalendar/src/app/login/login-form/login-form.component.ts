@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login-form',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
+  @Output() slideNext = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  doNextPage() {
+    this.slideNext.emit();
+  }
 }

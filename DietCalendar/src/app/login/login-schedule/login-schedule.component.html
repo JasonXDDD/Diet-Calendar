@@ -6,31 +6,19 @@
 
   <div class="progress">
     <div
-      class="progress-bar progress-bar-striped progress-bar-animated"
+      *ngFor="let item of genProgressBar(schedule); let id = index"
+      class="progress-bar progress-bar-striped progress-bar-animated text-right"
       role="progressbar"
-      [ngStyle]="{width: calcTimeToLength('00:00', schedule[0].time)}"
-      aria-valuenow="10"
+      [ngStyle]="{width: item.duration * 100 / 24 + '%'}"
+      [ngClass]="{
+        '': item.status === '睡眠',
+        'bg-success': item.status === '吃',
+        'bg-warning': item.status === '禁食'
+      }"
+      [class.aria-valuenow]="item.duration"
       aria-valuemin="0"
       aria-valuemax="24"
-    ></div>
-
-    <div
-      class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-      role="progressbar"
-      [ngStyle]="{width: calcTimeToLength(schedule[0].time, schedule[1].time)}"
-      aria-valuenow="10"
-      aria-valuemin="0"
-      aria-valuemax="24"
-    ></div>
-
-    <div
-      class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-      role="progressbar"
-      [ngStyle]="{width: calcTimeToLength(schedule[1].time, schedule[2].time)}"
-      aria-valuenow="10"
-      aria-valuemin="0"
-      aria-valuemax="24"
-    ></div>
+    >{{ item.time | date: 'HH:mm': '+0000' }}&nbsp;&nbsp;</div>
   </div>
 
   <div>
@@ -41,9 +29,13 @@
       [title]="item.title"
       (timeEvent)="changeTime(id, $event)"
     ></app-event-item>
-
-
   </div>
 
-  <button class="ui inverted teal button mt-auto" type="submit">Submit</button>
+    <div class="mt-3 mx-auto text-white">
+      <span class="badge badge-success mr-1">吃</span> {{ calcType(genProgressBar(schedule), '吃') }} 小時
+      <span class="badge badge-warning mr-1 ml-3">禁食</span> {{ calcType(genProgressBar(schedule), '禁食') }} 小時
+      <span class="badge badge-primary mr-1 ml-3">睡眠</span> {{ calcType(genProgressBar(schedule), '睡眠') }} 小時
+    </div>
+
+  <button class="ui inverted teal button mt-auto" (click)="doNextPage()">下一步</button>
 </div>
