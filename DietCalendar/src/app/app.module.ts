@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { TabbarComponent } from './layout/tabbar/tabbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TabbarComponent,
   ],
   imports: [
     BrowserModule,
