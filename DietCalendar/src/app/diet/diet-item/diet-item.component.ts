@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-diet-item',
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DietItemComponent implements OnInit {
 
+  @Input() title: string;
+  @Input() description: string;
+  @Input() time: any;
+  @Input() user: string;
+  @Input() image: string;
   constructor() { }
 
   ngOnInit(): void {

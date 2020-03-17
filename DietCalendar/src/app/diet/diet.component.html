@@ -1,10 +1,12 @@
 <div class="bg-dark">
-
   <div style="padding: 0 0 4rem;">
-    <app-diet-item></app-diet-item>
-    <app-diet-item></app-diet-item>
-    <app-diet-item></app-diet-item>
+    <app-diet-item
+      *ngFor="let item of dietList | async"
+      [title]="item.title"
+      [description]="item.description"
+      [image]="item.image"
+      [time]="item.time"
+      [user]="item.user"
+    ></app-diet-item>
   </div>
-
-
 </div>

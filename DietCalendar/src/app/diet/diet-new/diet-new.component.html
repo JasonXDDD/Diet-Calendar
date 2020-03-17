@@ -1,0 +1,40 @@
+<div class="bg-dark mx-0 d-flex flex-column h-75">
+  <button class="btn p-0" (click)="cameraImage.click()">
+    <div
+      class="bg d-flex align-items-center justify-content-center"
+      style="height: 15rem; background-color: #999999"
+      [style.backgroundImage]="'url(' + image + ')'"
+    >
+      {{ image === ''? '上傳圖片': '' }}
+    </div>
+  </button>
+
+  <input type="file" accept="image/*" capture style="display: none;" #cameraImage (change)="addImage($event)">
+
+  <form class="ui inverted form mx-3 mt-3">
+    <div class="field">
+      <label>標題</label>
+      <input
+        type="text"
+        class="input-dark w-fill"
+        name="first-name"
+        placeholder="給個標題吧"
+        [(ngModel)]="tilte"
+      />
+    </div>
+
+    <div class="field">
+      <label>內文</label>
+      <textarea
+        type="text"
+        class="input-dark w-fill"
+        name="last-name"
+        placeholder="寫點感想吧"
+        rows="5"
+        [(ngModel)]="description"
+      ></textarea>
+    </div>
+  </form>
+
+  <button class="ui inverted teal button mt-auto mx-3" (click)="this.doSubmit()">下一步</button>
+</div>

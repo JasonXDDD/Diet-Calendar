@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AfsService } from '@app/core/services/afs.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-diet',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DietComponent implements OnInit {
 
-  constructor() { }
+  constructor(private afs: AfsService) { }
 
+  dietList: Observable<any[]>;
   ngOnInit(): void {
+    this.dietList = this.afs.doGet();
   }
+
 
 }

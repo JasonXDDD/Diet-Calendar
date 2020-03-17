@@ -15,7 +15,6 @@ export class CalendarComponent implements OnInit {
   initCalendar() {
     $('#inline_calendar').calendar({
       type: 'date',
-      debug: true,
       initialDate: moment(new Date()).format('DD-MM-YYYY'),
       eventDates: [
         {
