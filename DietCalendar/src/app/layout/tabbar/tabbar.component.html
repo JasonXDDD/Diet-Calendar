@@ -1,12 +1,24 @@
-<div class="fixed-bottom d-flex align-items-center justify-content-around w-100 bg-tabbar pb-3">
+<div class="fixed-bottom d-flex align-items-center justify-content-around w-100 bg-tabbar pb-3" style="box-shadow: 0px -5px 3px #1a191966">
+
+  <button class="btn d-flex flex-column justify-content-center p-3 text-white" [routerLink]="['/calendar']">
+    <i class="inverted large calendar alternate outline icon" [ngClass]="{'teal': url === '/calendar'}"></i>
+  </button>
+
+  <button class="btn d-flex flex-column justify-content-center p-3 text-white" [routerLink]="['/diet']">
+    <i class="inverted large users icon" [ngClass]="{'teal': url === '/diet'}"></i>
+  </button>
+
+  <button class="btn d-flex flex-column justify-content-center p-3 text-white" style="margin-top: -2rem">
+    <div class="bg-add d-flex justify-content-center align-items-center rounded-circle p-3 shadow-my-dark">
+      <i class="large plus icon p-0 m-0"></i>
+    </div>
+  </button>
 
   <button class="btn d-flex flex-column justify-content-center p-3 text-white">
-    <i class="large calendar alternate outline icon"></i>
+    <i class="inverted large utensils icon" [ngClass]="{'teal': url === '/'}"></i>
   </button>
-  <button class="btn d-flex flex-column justify-content-center p-3 text-white">
-    <i class="large users icon"></i>
-  </button>
-  <button class="btn d-flex flex-column justify-content-center p-3 text-white">
-    <i class="large utensils icon"></i>
+
+  <button class="btn d-flex flex-column justify-content-center p-3 text-white" [routerLink]="['/login']">
+    <i class="inverted large user icon" [ngClass]="{'teal': url === '/login'}"></i>
   </button>
 </div>

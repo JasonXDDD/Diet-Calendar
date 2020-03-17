@@ -22,3 +22,38 @@
 .w-fill {
   width: -webkit-fill-available !important;
 }
+
+// fix semantic ui calendar dark mode
+.ui.dark-calendar.calendar .ui.table {
+  border: none;
+
+  tr {
+    td,
+    th {
+      background-color: #555555;
+      color: white;
+      font-weight: 700;
+      padding: .5rem 1rem;
+    }
+
+    th {
+      background-color: #343a40;
+    }
+
+    td.eat {
+      background-color: #6dffff;
+      color: rgb(53, 90, 44);
+
+    }
+
+    td.active {
+      background-color: #444444;
+      color: white;
+    }
+
+    td.adjacent.disabled{
+      background-color: #333333;
+      color: darkgrey;
+    }
+  }
+}
