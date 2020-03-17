@@ -1,6 +1,5 @@
 <div class="ui inverted card fluid rounded-my">
   <div class="d-flex align-items-center content text-white">
-
     <img
       class="ui avatar image"
       src="https://fomantic-ui.com/images/avatar/large/elliot.jpg"
@@ -17,13 +16,14 @@
         </div>
       </div>
     </div>
-
   </div>
-  <div
-    class="bg"
-    style="height: 20rem;"
-    [style.backgroundImage]="'url(' + image + ')'"
-  ></div>
+  <a data-fancybox="gallery" [href]="image">
+    <div
+      class="bg"
+      style="height: 20rem;"
+      [style.backgroundImage]="'url(' + image + ')'"
+    ></div>
+  </a>
 
   <div class="content">
     <a class="header">{{ title }}</a>

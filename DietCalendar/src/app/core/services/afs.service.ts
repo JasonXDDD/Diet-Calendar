@@ -1,18 +1,28 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AfsService {
-
+  userCollection: AngularFirestoreCollection;
   dietCollection: AngularFirestoreCollection;
   diets: Observable<any[]>;
+  users: Observable<any[]>;
 
   constructor(private db: AngularFirestore) {
-    this.dietCollection = db.collection('diet', ref => ref.orderBy('time', 'desc'));
+    this.dietCollection = db.collection('diet', ref =>
+      ref.orderBy('time', 'desc')
+    );
+    this.userCollection = db.collection('user', ref =>
+      ref.orderBy('time', 'desc')
+    );
     this.diets = this.dietCollection.valueChanges();
+    this.users = this.dietCollection.valueChanges();
   }
 
   async doAddItem(data) {
@@ -20,7 +30,18 @@ export class AfsService {
     return true;
   }
 
-  doGet() {
-    return this.diets;
+  async doAddUser(data) {
+    await this.userCollection.add(data);
+    return true;
+  }
+
+  doGet(type) {
+    if (type === 'diet') {
+      return this.diets;
+    }
+
+    if (type === 'user') {
+      return this.users;
+    }
   }
 }

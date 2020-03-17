@@ -44,7 +44,7 @@ export class DietNewComponent implements OnInit, AfterViewInit {
 
   async doSubmit() {
     const data = {
-      user: 'XD',
+      user: this.user,
       title: this.tilte,
       description: this.description,
       image: this.image,

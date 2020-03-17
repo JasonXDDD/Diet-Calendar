@@ -13,7 +13,7 @@ export class DietComponent implements OnInit {
 
   dietList: Observable<any[]>;
   ngOnInit(): void {
-    this.dietList = this.afs.doGet();
+    this.dietList = this.afs.doGet('diet');
   }
 
 

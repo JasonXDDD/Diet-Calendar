@@ -14,11 +14,11 @@
     </div>
   </button>
 
-  <button class="btn d-flex flex-column justify-content-center p-3 text-white">
-    <i class="inverted large utensils icon" [ngClass]="{'teal': url === '/'}"></i>
+  <button class="btn d-flex flex-column justify-content-center p-3 text-white" [routerLink]="['/login']">
+    <i class="inverted large utensils icon" [ngClass]="{'teal': url === '/login'}"></i>
   </button>
 
-  <button class="btn d-flex flex-column justify-content-center p-3 text-white" [routerLink]="['/login']">
-    <i class="inverted large user icon" [ngClass]="{'teal': url === '/login'}"></i>
+  <button class="btn d-flex flex-column justify-content-center p-3 text-white" [routerLink]="['/user']">
+    <i class="inverted large user icon" [ngClass]="{'teal': url === '/user'}"></i>
   </button>
 </div>

@@ -57,3 +57,19 @@
     }
   }
 }
+
+
+// fix CalendarHeatmap
+.ch-year {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.ch-month {
+  margin: 1rem .5rem;
+}
+
+.ch-day {
+  border: 1px solid #343a40;
+}
