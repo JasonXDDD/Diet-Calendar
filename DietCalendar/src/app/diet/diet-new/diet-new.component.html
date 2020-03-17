@@ -5,11 +5,11 @@
       style="height: 15rem; background-color: #999999"
       [style.backgroundImage]="'url(' + image + ')'"
     >
-      {{ image === ''? '上傳圖片': '' }}
+      {{ image === ''? (loading? '上傳中...': '上傳圖片'): '' }}
     </div>
   </button>
 
-  <input type="file" accept="image/*" capture style="display: none;" #cameraImage (change)="addImage($event)">
+  <input type="file" accept="image/*" capture style="display: none;" #cameraImage (change)="uploadFile($event)">
 
   <form class="ui inverted form mx-3 mt-3">
     <div class="field">

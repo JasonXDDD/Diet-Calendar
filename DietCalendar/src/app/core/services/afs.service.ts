@@ -11,7 +11,7 @@ export class AfsService {
   diets: Observable<any[]>;
 
   constructor(private db: AngularFirestore) {
-    this.dietCollection = db.collection('diet');
+    this.dietCollection = db.collection('diet', ref => ref.orderBy('time', 'desc'));
     this.diets = this.dietCollection.valueChanges();
   }
 
