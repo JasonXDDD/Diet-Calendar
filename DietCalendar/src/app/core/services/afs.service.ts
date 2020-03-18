@@ -22,7 +22,7 @@ export class AfsService {
       ref.orderBy('time', 'desc')
     );
     this.diets = this.dietCollection.valueChanges();
-    this.users = this.dietCollection.valueChanges();
+    this.users = this.userCollection.valueChanges();
   }
 
   async doAddItem(data) {
@@ -35,9 +35,19 @@ export class AfsService {
     return true;
   }
 
-  doGet(type) {
+  async doGet(type, query?) {
     if (type === 'diet') {
-      return this.diets;
+      if (query) {
+        const collection = await this.db.collection('diet', ref =>
+          ref.where('user', '==', query.user).orderBy('time', 'desc')
+        );
+        return collection.valueChanges();
+      } else {
+        const collection = await this.db.collection('diet', ref =>
+          ref.orderBy('time', 'desc')
+        );
+        return collection.valueChanges();
+      }
     }
 
     if (type === 'user') {

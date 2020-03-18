@@ -11,10 +11,10 @@ export class DietComponent implements OnInit {
 
   constructor(private afs: AfsService) { }
 
-  dietList: Observable<any[]>;
-  ngOnInit(): void {
-    this.dietList = this.afs.doGet('diet');
-  }
+  dietList: Observable<any>;
 
+  async ngOnInit() {
+    this.dietList = await this.afs.doGet('diet');
+  }
 
 }

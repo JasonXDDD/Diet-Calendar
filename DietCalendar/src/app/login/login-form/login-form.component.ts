@@ -38,4 +38,8 @@ export class LoginFormComponent implements OnInit {
 
     this.doNextPage();
   }
+
+  setLocalStorage(name, key) {
+    localStorage.setItem(name, key);
+  }
 }

@@ -1,9 +1,16 @@
 <div class="m-3">
-  <h3 class="d-flex align-items-center m-0 text-white">罪惡<span class="ml-auto" style="font-size: 1rem">20:00</span></h3>
-  <p class="text-white">可怕的東西</p>
+  <h3 class="d-flex align-items-center m-0 text-white">
+    {{ title }}
+    <span class="ml-auto text-right" style="font-size: 1rem">
+      {{ time.toDate() | date: 'HH:mm' }}<br>
+      {{ time.toDate() | date: 'EEE. MM/dd' }}
+    </span>
+  </h3>
+  <p class="text-white">{{ description }}</p>
   <div
     class="bg rounded-my shadow-my-dark"
-    style="height: 20rem; background-image: url(https://elt.rti.org.tw/wp-content/uploads/2019/10/960x540_learning-english-take-away-english-the-vegan-fast-food-trend-imagesgetty.jpg)"
+    style="height: 20rem;"
+    [style.backgroundImage]="'url(' + image + ')'"
   ></div>
-  <hr style="border-color: #999999">
+  <hr style="border-color: #999999" />
 </div>

@@ -41,14 +41,18 @@
     }
 
     td.eat {
-      background-color: #6dffff;
+      background-color: #5ad3d3;
       color: rgb(53, 90, 44);
-
     }
 
     td.active {
       background-color: #444444;
       color: white;
+    }
+
+    td.eat.active {
+      background-color: #3c8686;
+      color: rgb(44, 58, 40);
     }
 
     td.adjacent.disabled{

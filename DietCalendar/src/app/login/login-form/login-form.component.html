@@ -11,6 +11,7 @@
         name="first-name"
         placeholder="登入 ID"
         [(ngModel)]="user"
+        (change)="setLocalStorage('user', user)"
       />
     </div>
     <div class="field">

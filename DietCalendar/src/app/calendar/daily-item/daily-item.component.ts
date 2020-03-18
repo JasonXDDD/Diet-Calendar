@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-daily-item',
@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DailyItemComponent implements OnInit {
 
+  @Input() title: string;
+  @Input() description: string;
+  @Input() time: any;
+  @Input() image: string;
   constructor() { }
 
   ngOnInit(): void {

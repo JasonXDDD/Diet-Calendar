@@ -1,5 +1,5 @@
 <div class="bg-dark mx-0 d-flex flex-column h-75">
-  <button class="btn p-0" (click)="cameraImage.click()">
+  <button class="btn p-0" (click)="selectImage.click()">
     <div
       class="bg d-flex align-items-center justify-content-center"
       style="height: 15rem; background-color: #999999"
@@ -9,7 +9,8 @@
     </div>
   </button>
 
-  <input type="file" accept="image/*" capture style="display: none;" #cameraImage (change)="uploadFile($event)">
+  <input type="file" accept="image/*" style="display: none;" capture #cameraImage (change)="uploadFile($event)">
+  <input type="file" accept="image/*" style="display: none;" #selectImage (change)="uploadFile($event)">
 
   <form class="ui inverted form mx-3 mt-3">
     <div class="field">

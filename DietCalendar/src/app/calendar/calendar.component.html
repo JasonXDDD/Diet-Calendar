@@ -2,9 +2,13 @@
   <div class="ui dark-calendar calendar pb-3" id="inline_calendar"></div>
 
   <div class="scrolling">
-    <app-daily-item></app-daily-item>
-    <app-daily-item></app-daily-item>
-    <app-daily-item></app-daily-item>
-    <app-daily-item></app-daily-item>
+    <app-daily-item
+      *ngFor="let item of targetList"
+      [title]="item.title"
+      [description]="item.description"
+      [image]="item.image"
+      [time]="item.time"
+    >
+    </app-daily-item>
   </div>
 </div>
