@@ -1,16 +1,13 @@
 <div class="m-3">
-  <h3 class="d-flex align-items-center m-0 text-white">
-    {{ title }}
-    <span class="ml-auto text-right" style="font-size: 1rem">
-      {{ time.toDate() | date: 'HH:mm' }}<br>
-      {{ time.toDate() | date: 'EEE. MM/dd' }}
-    </span>
-  </h3>
-  <p class="text-white">{{ description }}</p>
   <div
-    class="bg rounded-my shadow-my-dark"
-    style="height: 20rem;"
+    class="bg rounded-my shadow-my-dark mb-2"
+    style="height: 10rem;"
     [style.backgroundImage]="'url(' + image + ')'"
   ></div>
-  <hr style="border-color: #999999" />
+
+  <h5 class="m-0 text-white text-right">{{ title }}</h5>
+  <small class="d-block text-white-50 text-right">
+    {{ time.toDate() | date: 'HH:mm' }} {{ time.toDate() | date: 'EEE. MM/dd'}}
+  </small>
+  <p class="text-white text-right">{{ description }}</p>
 </div>
