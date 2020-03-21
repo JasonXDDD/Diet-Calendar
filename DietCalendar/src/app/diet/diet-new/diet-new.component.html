@@ -9,8 +9,8 @@
     </div>
   </button>
 
-  <input type="file" accept="image/*" style="display: none;" capture #cameraImage (change)="uploadFile($event)">
-  <input type="file" accept="image/*" style="display: none;" #selectImage (change)="uploadFile($event)">
+  <input type="file" accept="image/*" style="display: none;" capture #cameraImage (change)="addImage($event)">
+  <input type="file" accept="image/*" style="display: none;" #selectImage (change)="addImage($event)">
 
   <form class="ui inverted form mx-3 mt-3">
     <div class="field">

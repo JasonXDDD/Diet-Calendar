@@ -77,7 +77,7 @@ export class ServerService {
   async doPostNoHeaderRequest(url, data, params?, header?) {
 
     let headers = new HttpHeaders()
-      .set('Content-Type', 'application/json');
+      // .set('Content-Type', 'application/json');
       // .set("X-MPG-Language", sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : '')
       // .set("authorization", sessionStorage.getItem("token") ? 'token ' + sessionStorage.getItem("token") : '');
 
@@ -89,7 +89,7 @@ export class ServerService {
     }
 
     try {
-      const response = await this.http.post(url, JSON.stringify(data), { headers, params }).toPromise();
+      const response = await this.http.post(url, data, { headers, params }).toPromise();
       return { status: 200, data: response };
     } catch (error) {
       return error;

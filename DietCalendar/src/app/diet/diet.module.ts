@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DietRoutingModule } from './diet-routing.module';
 import { DietComponent } from './diet.component';
@@ -13,7 +13,8 @@ import { DietNewComponent } from './diet-new/diet-new.component';
   imports: [
     CommonModule,
     DietRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DietModule { }

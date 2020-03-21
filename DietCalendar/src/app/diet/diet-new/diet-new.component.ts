@@ -9,9 +9,13 @@ import { ServerUrl } from '@app/core/data/server_url';
 import { ServerService } from '@app/core/services/server.service';
 import { Router } from '@angular/router';
 import { AfsService } from '@app/core/services/afs.service';
-import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import {
+  AngularFireStorage,
+  AngularFireUploadTask
+} from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-diet-new',
@@ -30,6 +34,8 @@ export class DietNewComponent implements OnInit, AfterViewInit {
 
   constructor(
     private afs: AfsService,
+    private server: ServerService,
+    private api: ServerUrl,
     private storage: AngularFireStorage,
     private router: Router
   ) {}
@@ -58,6 +64,8 @@ export class DietNewComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/diet']);
   }
 
+
+  // Deprecated: turn into imgur upload api
   uploadFile(event) {
     this.loading = true;
     const self = this;
@@ -66,14 +74,47 @@ export class DietNewComponent implements OnInit, AfterViewInit {
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
 
-    task.snapshotChanges().pipe(
-      finalize(() => {
-        fileRef.getDownloadURL().subscribe(ele => {
-          self.image = ele;
-          self.loading = false;
-        });
-      })
-    ).subscribe();
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          fileRef.getDownloadURL().subscribe(ele => {
+            self.image = ele;
+            self.loading = false;
+          });
+        })
+      )
+      .subscribe();
   }
 
+  addImage(event) {
+    const self = this;
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+
+      reader.readAsDataURL(file);
+      reader.onload = async () => {
+        self.uploadImage(reader.result, file);
+      };
+    }
+  }
+
+  async uploadImage(data, file) {
+    this.loading = true;
+
+    const formData = new FormData();
+    formData.append('image', data.split(',')[1]);
+    formData.append('title', `${moment().format('YYYYMMDD-HHmm')}-${this.user}-${file.name}`);
+
+    const ans = await this.server.doPostNoHeaderRequest( this.api.imgurAPI, formData, {}, {
+      Authorization: 'Client-ID ' + environment.imgur.clientId
+    });
+
+    console.log(ans);
+    if (ans.status === 200) {
+      this.image = ans.data.data.link;
+    }
+  }
 }
