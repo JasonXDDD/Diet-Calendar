@@ -43,6 +43,8 @@ export class DietNewComponent implements OnInit, AfterViewInit {
   }
 
   async doSubmit() {
+    this.loading = true;
+
     const data = {
       user: this.user,
       title: this.tilte,
@@ -52,6 +54,7 @@ export class DietNewComponent implements OnInit, AfterViewInit {
     };
 
     await this.afs.doAddItem(data);
+    this.loading = false;
     this.router.navigate(['/diet']);
   }
 

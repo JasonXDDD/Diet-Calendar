@@ -9,12 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class DietComponent implements OnInit {
 
+  user = '';
   constructor(private afs: AfsService) { }
 
   dietList: Observable<any>;
 
   async ngOnInit() {
-    this.dietList = await this.afs.doGet('diet');
+    this.user = localStorage.getItem('user');
+    this.dietList = await this.afs.doGet('diet', { user: this.user });
   }
 
 }
