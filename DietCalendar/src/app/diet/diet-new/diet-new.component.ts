@@ -112,9 +112,10 @@ export class DietNewComponent implements OnInit, AfterViewInit {
       Authorization: 'Client-ID ' + environment.imgur.clientId
     });
 
-    console.log(ans);
+    // save data to image
     if (ans.status === 200) {
       this.image = ans.data.data.link;
     }
+    this.loading = false;
   }
 }
