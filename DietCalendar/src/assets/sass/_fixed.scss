@@ -30,19 +30,25 @@
   tr {
     td,
     th {
-      background-color: #555555;
+      background-color: #41464c;
       color: white;
       font-weight: 700;
       padding: .5rem 1rem;
     }
 
     th {
-      background-color: #343a40;
+      background-color: #555555;
+    }
+
+    &:nth-child(2) th{
+      font-size: .8rem;
+      border-top: none;
+      // border-bottom: 1px solid white;
     }
 
     td.eat {
-      background-color: #5ad3d3;
-      color: rgb(53, 90, 44);
+      // background-color: #5ad3d3;
+      color: #89f256;
     }
 
     td.active {
@@ -56,8 +62,8 @@
     }
 
     td.adjacent.disabled{
-      background-color: #333333;
-      color: darkgrey;
+      // background-color: #333333;
+      color: #787676;
     }
   }
 }

@@ -1,0 +1,30 @@
+<div class="mx-3 my-4">
+  <div
+    class="bg rounded-my-top position-relative"
+    style="height: 20rem"
+    [style.backgroundImage]="'url(' + cover + ')'"
+  >
+    <div
+      class="position-absolute t-0 r-0 w-100 rounded-my-top pt-2 pl-3 d-flex align-items-center"
+      style="padding-bottom: 5rem; background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,0))"
+    >
+      <img
+        class="ui avatar image"
+        src="https://fomantic-ui.com/images/avatar/large/elliot.jpg"
+      />
+      <div>
+        <p class="m-0 pl-2 text-white font-weight-bold">{{ user }}</p>
+        <small class="m-0 pl-2 text-white-50">
+          {{ time | date: 'yyyy-MM-dd' }}
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="rounded-my-bottom p-3" style="background-color: #454f51;">
+    <h3 class="text-white font-weight-bold m-0 pr-3">{{ title }}</h3>
+    <p class="text-white-50">{{ slogan }}</p>
+  </div>
+</div>
+
+<!--  -->

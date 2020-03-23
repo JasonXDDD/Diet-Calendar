@@ -1,0 +1,12 @@
+<div class="bg-dark" style="padding-top: 1rem">
+  <div>
+    <app-meal-item
+      *ngFor="let item of mealList"
+      [title]="item.title"
+      [slogan]="item.slogan"
+      [cover]="item.cover"
+      [time]="item.createAt"
+      [user]="item.user"
+    ></app-meal-item>
+  </div>
+</div>
