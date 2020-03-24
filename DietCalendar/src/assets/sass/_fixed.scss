@@ -15,12 +15,24 @@
   right: 0 !important;
 }
 
+.h-0 {
+  height: 0 !important;
+}
+
+.w-0 {
+  width: 0 !important;
+}
+
 .w-fit {
   width: fit-content !important;
 }
 
 .w-fill {
   width: -webkit-fill-available !important;
+}
+
+.z-1000 {
+  z-index: 1000 !important;
 }
 
 // fix semantic ui calendar dark mode
@@ -33,15 +45,15 @@
       background-color: #41464c;
       color: white;
       font-weight: 700;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
     }
 
     th {
       background-color: #555555;
     }
 
-    &:nth-child(2) th{
-      font-size: .8rem;
+    &:nth-child(2) th {
+      font-size: 0.8rem;
       border-top: none;
       // border-bottom: 1px solid white;
     }
@@ -61,13 +73,12 @@
       color: rgb(44, 58, 40);
     }
 
-    td.adjacent.disabled{
+    td.adjacent.disabled {
       // background-color: #333333;
       color: #787676;
     }
   }
 }
-
 
 // fix CalendarHeatmap
 .ch-year {
@@ -77,7 +88,7 @@
 }
 
 .ch-month {
-  margin: 1rem .5rem;
+  margin: 1rem 0.5rem;
 }
 
 .ch-day {

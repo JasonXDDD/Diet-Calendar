@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-meal-item',
@@ -11,7 +11,14 @@ export class MealItemComponent implements OnInit {
   @Input() time: any;
   @Input() user: string;
   @Input() cover: string;
+  @Output() contentEvent = new EventEmitter<boolean>();
+
+  isOpen = false;
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleList(value) {
+    this.contentEvent.emit(value);
+  }
 }

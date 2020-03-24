@@ -1,4 +1,4 @@
-<div class="bg-dark" style="padding-top: 1rem">
+<div class="bg-dark" [ngClass]="{ 'h-0 overflow-hidden': isOpen }">
   <div>
     <app-meal-item
       *ngFor="let item of mealList"
@@ -7,6 +7,7 @@
       [cover]="item.cover"
       [time]="item.createAt"
       [user]="item.user"
+      (contentEvent)="setContent($event)"
     ></app-meal-item>
   </div>
 </div>

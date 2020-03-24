@@ -1,11 +1,14 @@
-<div class="mx-3 my-4">
+<div [ngClass]="{ 'mx-3 my-4': !isOpen, 'position-absolute t-0 l-0 r-0 z-1000': isOpen }">
   <div
-    class="bg rounded-my-top position-relative"
+    class="bg position-relative"
     style="height: 20rem"
+    [ngClass]="{ 'rounded-my-top': !isOpen }"
     [style.backgroundImage]="'url(' + cover + ')'"
+    (click)="isOpen = !isOpen; toggleList(isOpen);"
   >
     <div
-      class="position-absolute t-0 r-0 w-100 rounded-my-top pt-2 pl-3 d-flex align-items-center"
+      [ngClass]="{ 'rounded-my-top': !isOpen }"
+      class="position-absolute t-0 r-0 w-100 pt-2 pl-3 d-flex align-items-center"
       style="padding-bottom: 5rem; background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,0))"
     >
       <img
@@ -21,9 +24,45 @@
     </div>
   </div>
 
-  <div class="rounded-my-bottom p-3" style="background-color: #454f51;">
+  <div [ngClass]="{ 'rounded-my-bottom': !isOpen }" class="p-3" style="background-color: #454f51;">
     <h3 class="text-white font-weight-bold m-0 pr-3">{{ title }}</h3>
     <p class="text-white-50">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white">{{ slogan }}</p>
+    <p *ngIf="isOpen" class="text-white" style="padding-bottom: 5rem;">{{ slogan }}bvbvcbcbcvdd  </p>
   </div>
 </div>
 

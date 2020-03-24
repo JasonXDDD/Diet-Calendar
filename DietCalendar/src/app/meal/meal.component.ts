@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meal.component.sass']
 })
 export class MealComponent implements OnInit {
+  isOpen = false;
   mealList = [
     {
       title: '嫩煎雞排嫩煎雞排',
@@ -46,4 +47,8 @@ export class MealComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  setContent(value) {
+    this.isOpen = value;
+  }
 }
