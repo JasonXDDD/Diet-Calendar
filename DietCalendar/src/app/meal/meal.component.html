@@ -9,5 +9,12 @@
       [user]="item.user"
       (contentEvent)="setContent($event)"
     ></app-meal-item>
+
+    <div class="mx-3 mx-sm-5 my-4">
+      <button class="ui fluid inverted teal button py-4 rounded-my" [routerLink]="['/meal/new']">
+        <i class="teal plus icon"></i>
+        新增食譜
+      </button>
+    </div>
   </div>
 </div>

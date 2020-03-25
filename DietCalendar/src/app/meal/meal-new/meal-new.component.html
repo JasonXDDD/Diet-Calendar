@@ -1,1 +1,65 @@
-<p>meal-new works!</p>
+<div class="bg-dark mx-0 d-flex flex-column">
+  <button class="btn p-0" (click)="selectImage.click()">
+    <div
+      class="bg d-flex align-items-center justify-content-center"
+      style="height: 15rem; background-color: #999999"
+      [style.backgroundImage]="'url(' + image + ')'"
+    >
+      {{ image === ''? (loading? '上傳中...': '上傳圖片'): '' }}
+    </div>
+  </button>
+
+  <input
+    type="file"
+    accept="image/*"
+    style="display: none;"
+    capture
+    #cameraImage
+    (change)="addImage($event)"
+  />
+  <input
+    type="file"
+    accept="image/*"
+    style="display: none;"
+    #selectImage
+    (change)="addImage($event)"
+  />
+
+  <form class="ui inverted form mx-3 mt-3">
+    <div class="field">
+      <label>標題</label>
+      <input
+        type="text"
+        class="input-dark w-fill"
+        name="title"
+        placeholder="給個標題吧"
+        [(ngModel)]="tilte"
+      />
+    </div>
+
+    <div class="field">
+      <label>標語</label>
+      <input
+        type="text"
+        class="input-dark w-fill"
+        name="slogan"
+        placeholder="Slogan"
+        [(ngModel)]="slogan"
+      />
+    </div>
+
+    <div class="field">
+      <label>內文</label>
+
+      <app-tiny-editor
+        [elementId]="'content'"
+        (onEditorChange)="editorHandler($event)"
+        (onEditorKeyup)="editorHandler($event)"
+        [data]="content"
+      >
+      </app-tiny-editor>
+    </div>
+  </form>
+
+  <button class="ui inverted teal button mx-3 my-5">下一步</button>
+</div>
