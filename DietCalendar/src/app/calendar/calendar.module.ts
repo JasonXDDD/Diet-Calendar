@@ -11,6 +11,9 @@ import { DailyItemComponent } from './daily-item/daily-item.component';
   imports: [
     CommonModule,
     CalendarRoutingModule
-  ]
+  ],
+  entryComponents: [CalendarComponent]
 })
-export class CalendarModule { }
+export class CalendarModule {
+  static EntryComponent = CalendarComponent;
+}

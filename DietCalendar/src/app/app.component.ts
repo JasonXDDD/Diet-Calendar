@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor(private deviceService: DeviceDetectorService) {}
 
+  isMobile = false;
   ngOnInit(): void {
     // this.initCalendar();
+    this.isMobile = this.deviceService.isMobile();
   }
+
+
 }

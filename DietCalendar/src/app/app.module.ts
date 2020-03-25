@@ -13,11 +13,18 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { PcComponent } from './layout/pc/pc.component';
+import { PhoneComponent } from './layout/phone/phone.component';
+import { DeviceDetectorModule } from 'ngx-device-detector';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabbarComponent,
+    PcComponent,
+    PhoneComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +34,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    DeviceDetectorModule.forRoot(),
     HttpClientModule,
     CoreModule
   ],

@@ -14,11 +14,28 @@ export class MealItemComponent implements OnInit {
   @Output() contentEvent = new EventEmitter<boolean>();
 
   isOpen = false;
+  top;
+
   constructor() {}
 
   ngOnInit(): void {}
 
   toggleList(value) {
+
+    if (value) {
+      this.top = window.pageYOffset;
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      window.scroll({
+        top: this.top,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
     this.contentEvent.emit(value);
   }
 }

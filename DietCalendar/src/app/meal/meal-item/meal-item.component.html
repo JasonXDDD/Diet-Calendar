@@ -1,7 +1,7 @@
-<div [ngClass]="{ 'mx-3 my-4': !isOpen, 'position-absolute t-0 l-0 r-0 z-1000': isOpen }">
+<div [ngClass]="{ 'mx-3 mx-sm-5 my-4': !isOpen, 'position-absolute t-0 l-0 r-0 z-1000': isOpen }">
   <div
-    class="bg position-relative"
-    style="height: 20rem"
+    class="bg position-relative h-cover"
+    style=""
     [ngClass]="{ 'rounded-my-top': !isOpen }"
     [style.backgroundImage]="'url(' + cover + ')'"
     (click)="isOpen = !isOpen; toggleList(isOpen);"

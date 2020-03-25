@@ -12,6 +12,9 @@ import { MealNewComponent } from './meal-new/meal-new.component';
   imports: [
     CommonModule,
     MealRoutingModule
-  ]
+  ],
+  entryComponents: [MealComponent]
 })
-export class MealModule { }
+export class MealModule {
+  static EntryComponent = MealComponent;
+}

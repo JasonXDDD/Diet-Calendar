@@ -1,9 +1,9 @@
 <div class="bg-dark">
-  <div class="fixed-top ui dark-calendar calendar pb-3" id="inline_calendar"></div>
+  <div class="p-calendar ui dark-calendar calendar pb-3" id="inline_calendar"></div>
 
   <div class="scrolling">
     <div class="row no-gutters">
-      <div class="col-6" *ngFor="let item of targetList">
+      <div class="col-6 col-sm-12" *ngFor="let item of targetList">
         <app-daily-item
           [title]="item.title"
           [description]="item.description"

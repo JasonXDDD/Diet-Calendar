@@ -15,6 +15,9 @@ import { DietNewComponent } from './diet-new/diet-new.component';
     DietRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  entryComponents: [DietComponent]
 })
-export class DietModule { }
+export class DietModule {
+  static EntryComponent = DietComponent;
+}

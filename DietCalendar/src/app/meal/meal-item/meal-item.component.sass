@@ -1,6 +1,10 @@
-
+@import '../../../assets/sass/_rwd.sass'
 
 .content
   height: calc(100vh - 20rem)
   overflow: auto
 
+.h-cover
+  height: 15rem
+  @include phone-width
+    height: 20rem

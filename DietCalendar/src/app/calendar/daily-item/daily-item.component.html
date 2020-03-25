@@ -1,13 +1,14 @@
-<div class="m-3">
+<div class="m-3 mx-sm-3 my-sm-2 d-sm-flex">
   <div
-    class="bg rounded-my shadow-my-dark mb-2"
-    style="height: 10rem;"
+    class="cl-image bg rounded-my shadow-my-sm-dark mb-2"
     [style.backgroundImage]="'url(' + image + ')'"
   ></div>
 
-  <h5 class="m-0 text-white text-right">{{ title }}</h5>
-  <small class="d-block text-white-50 text-right">
-    {{ time.toDate() | date: 'HH:mm' }} {{ time.toDate() | date: 'EEE. MM/dd'}}
-  </small>
-  <p class="text-white text-right">{{ description }}</p>
+  <div class="cl-content">
+    <h5 class="m-0 text-white text-right text-sm-left">{{ title }}</h5>
+    <small class="d-block text-white-50 text-right text-sm-left">
+      {{ time.toDate() | date: 'HH:mm' }} {{ time.toDate() | date: 'EEE. MM/dd'}}
+    </small>
+    <p class="text-white text-right text-sm-left">{{ description }}</p>
+  </div>
 </div>

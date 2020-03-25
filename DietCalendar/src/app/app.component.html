@@ -1,6 +1,7 @@
-<div class="fixed-top bg-dark p-3 h-100" style="z-index: -1">
+<div class="fixed-top bg-dark h-100" style="z-index: -1; padding-top: 5rem">
   <h3 class="text-center text-white">刷新刷新 :D</h3>
 </div>
-<router-outlet></router-outlet>
 
-<app-tabbar></app-tabbar>
+<app-pc *ngIf="!isMobile"></app-pc>
+<app-phone *ngIf="isMobile"></app-phone>
+

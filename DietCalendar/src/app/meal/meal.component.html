@@ -1,5 +1,5 @@
 <div class="bg-dark" [ngClass]="{ 'h-0 overflow-hidden': isOpen }">
-  <div>
+  <div id="meal-list">
     <app-meal-item
       *ngFor="let item of mealList"
       [title]="item.title"

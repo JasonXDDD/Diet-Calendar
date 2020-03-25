@@ -1,3 +1,5 @@
+@import "./_rwd.sass";
+
 // fix bootstrap position no setting t,b,l,r
 .t-0 {
   top: 0 !important;
@@ -45,7 +47,9 @@
       background-color: #41464c;
       color: white;
       font-weight: 700;
-      padding: 0.5rem 1rem;
+      @include phone-width {
+        padding: 0.5rem 1rem;
+      }
     }
 
     th {
@@ -64,7 +68,7 @@
     }
 
     td.active {
-      background-color: #444444;
+      background-color: #ec3535;
       color: white;
     }
 
