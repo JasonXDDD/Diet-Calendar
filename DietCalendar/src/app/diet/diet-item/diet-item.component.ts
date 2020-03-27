@@ -10,7 +10,7 @@ export class DietItemComponent implements OnInit {
 
   @Input() title: string;
   @Input() description: string;
-  @Input() time: any;
+  @Input() time: Date;
   @Input() user: string;
   @Input() image: string;
   constructor() { }

@@ -8,9 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class MealItemComponent implements OnInit {
   @Input() title: string;
   @Input() slogan: string;
-  @Input() time: any;
+  @Input() time: Date;
   @Input() user: string;
   @Input() cover: string;
+  @Input() content: string;
   @Output() contentEvent = new EventEmitter<boolean>();
 
   isOpen = false;

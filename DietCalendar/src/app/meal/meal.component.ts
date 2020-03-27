@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AfsService } from '@app/core/services/afs.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-meal',
@@ -7,18 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MealComponent implements OnInit {
   isOpen = false;
-  mealList = [
-    {
-      title: '嫩煎雞排嫩煎雞排',
-      slogan: '學會嫩煎雞排',
-      cover: 'https://i.imgur.com/aoR9siY.jpg',
-      createAt: new Date(),
-      user: '罐罐 XD'
-    }
-  ];
-  constructor() {}
+  mealList: Observable<any>;
 
-  ngOnInit(): void {}
+  constructor(private afs: AfsService) {}
+
+  async ngOnInit() {
+    this.mealList = await this.afs.doGet('meal');
+  }
 
   setContent(value) {
     this.isOpen = value;

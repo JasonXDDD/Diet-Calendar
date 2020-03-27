@@ -11,8 +11,10 @@ import { Observable } from 'rxjs';
 export class AfsService {
   userCollection: AngularFirestoreCollection;
   dietCollection: AngularFirestoreCollection;
+  mealCollection: AngularFirestoreCollection;
   diets: Observable<any[]>;
   users: Observable<any[]>;
+  meals: Observable<any[]>;
 
   constructor(private db: AngularFirestore) {
     this.dietCollection = db.collection('diet', ref =>
@@ -21,12 +23,21 @@ export class AfsService {
     this.userCollection = db.collection('user', ref =>
       ref.orderBy('time', 'desc')
     );
+    this.mealCollection = db.collection('meal', ref =>
+      ref.orderBy('time', 'desc')
+    );
     this.diets = this.dietCollection.valueChanges();
     this.users = this.userCollection.valueChanges();
+    this.meals = this.mealCollection.valueChanges();
   }
 
   async doAddItem(data) {
     await this.dietCollection.add(data);
+    return true;
+  }
+
+  async doAddMeal(data) {
+    await this.mealCollection.add(data);
     return true;
   }
 
@@ -52,6 +63,13 @@ export class AfsService {
 
     if (type === 'user') {
       return this.users;
+    }
+
+    if (type === 'meal') {
+      const collection = await this.db.collection('meal', ref =>
+        ref.orderBy('createAt', 'desc')
+      );
+      return collection.valueChanges();
     }
   }
 }

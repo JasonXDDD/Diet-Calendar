@@ -1,12 +1,13 @@
 <div class="bg-dark" [ngClass]="{ 'h-0 overflow-hidden': isOpen }">
   <div id="meal-list">
     <app-meal-item
-      *ngFor="let item of mealList"
+      *ngFor="let item of mealList | async"
       [title]="item.title"
       [slogan]="item.slogan"
       [cover]="item.cover"
-      [time]="item.createAt"
+      [time]="item.createAt.toDate()"
       [user]="item.user"
+      [content]="item.content"
       (contentEvent)="setContent($event)"
     ></app-meal-item>
 

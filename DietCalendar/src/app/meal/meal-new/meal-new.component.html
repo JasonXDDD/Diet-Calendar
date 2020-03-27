@@ -3,9 +3,9 @@
     <div
       class="bg d-flex align-items-center justify-content-center"
       style="height: 15rem; background-color: #999999"
-      [style.backgroundImage]="'url(' + image + ')'"
+      [style.backgroundImage]="'url(' + cover + ')'"
     >
-      {{ image === ''? (loading? '上傳中...': '上傳圖片'): '' }}
+      {{ cover === ''? (loading? '上傳中...': '上傳圖片'): '' }}
     </div>
   </button>
 
@@ -61,5 +61,5 @@
     </div>
   </form>
 
-  <button class="ui inverted teal button mx-3 my-5">下一步</button>
+  <button class="ui inverted teal button mx-3 my-5" [disabled]="cover === '' || loading" (click)="this.doSubmit()">下一步</button>
 </div>

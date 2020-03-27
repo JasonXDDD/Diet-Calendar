@@ -17,7 +17,7 @@ export class MealNewComponent implements OnInit {
   @ViewChild('cameraImage') cameraImage: ElementRef;
 
   user = '';
-  image = '';
+  cover = '';
   tilte = '';
   slogan = '';
   content = '';
@@ -36,11 +36,6 @@ export class MealNewComponent implements OnInit {
     this.user = localStorage.getItem('user');
   }
 
-  openModal() {
-    $('.ui.modal').modal({
-    }).modal('show');
-  }
-
   editorHandler(event) {
     this.content = event;
   }
@@ -52,13 +47,14 @@ export class MealNewComponent implements OnInit {
       user: this.user,
       title: this.tilte,
       content: this.content,
-      image: this.image,
-      time: new Date()
+      cover: this.cover,
+      slogan: this.slogan,
+      createAt: new Date()
     };
 
-    await this.afs.doAddItem(data);
+    await this.afs.doAddMeal(data);
     this.loading = false;
-    this.router.navigate(['/diet']);
+    this.router.navigate(['/meal']);
   }
 
   // Deprecated: turn into imgur upload api
@@ -77,7 +73,7 @@ export class MealNewComponent implements OnInit {
       .pipe(
         finalize(() => {
           fileRef.getDownloadURL().subscribe(ele => {
-            self.image = ele;
+            self.cover = ele;
             self.loading = false;
           });
         })
@@ -120,7 +116,7 @@ export class MealNewComponent implements OnInit {
 
     // save data to image
     if (ans.status === 200) {
-      this.image = ans.data.data.link;
+      this.cover = ans.data.data.link;
     }
     this.loading = false;
   }
